@@ -35,7 +35,7 @@ function App() {
   return (
     <div>
       <Greeting username="Alice" />
-      <Greeting username="Bob" />
+      {/* <Greeting username="Bob" />  Midterm Task 1 shows 1 greeting. This call disabled for midterm */}
 
       <Counter />
 
