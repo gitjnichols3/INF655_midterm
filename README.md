@@ -1,0 +1,1 @@
+This assignment expands on Assignment 1 by implementing props, state management with useState, dynamic list rendering with unique keys, passing functions as props, and creating a controlled form component.
