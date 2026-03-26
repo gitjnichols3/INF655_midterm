@@ -41,15 +41,9 @@ function App() {
 
       <UserInfo handleClick={handleAlert} />
       
-      <TaskComponent task={getRandomTask()} />
+      <TaskComponent tasks={tasks} />
 
-      <ul>
-        { 
-          tasks.map(task => (
-            <li key={task.id}> {task.name}</li>
-          ))
-          }
-      </ul>
+
       <TaskForm />
     </div>
   );
