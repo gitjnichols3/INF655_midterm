@@ -8,7 +8,7 @@ const [input, setInput] = useState("");
 /* Set up state to check if sorting is active */
 const [sort, setSort] = useState(false);
 
-/*  Filters task array sent as props from App based on input. Saves copy to leave original untouched */
+/*  Filters task array sent as props from App based on input. Saves a copy to leave original unchanged */
 const filteredTasks = props.tasks.filter(task =>
   task.name.toLowerCase().includes(input.toLowerCase())
 );
@@ -28,7 +28,7 @@ const displayedTasks = sort
           {/* Maps over displayedTasks and displays as list items */}
           {displayedTasks.map(task => (
             <li key={task.id}>
-              {task.name}
+              {task.name} - {task.description} {/* Added description to map when added to tasks state array in Midterm Task 4 */}
             </li>
           ))}
         </ul>
