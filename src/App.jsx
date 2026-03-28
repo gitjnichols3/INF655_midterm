@@ -21,9 +21,15 @@ function App() {
 
   /* Creates a new task from form input, adds it to a new array with existing tasks, and updates the tasks state */
   function addTask(Tname, Tdescription){
-    const newTask = {id:tasks.length + 1, name: Tname, description: Tdescription};
+    const newTask = {id:Date.now(), name: Tname, description: Tdescription};/* Date.now() used to avoid duplicate id values */
     const newArray = [...tasks, newTask];
     setTasks(newArray);
+  }
+
+  /* Deletes a task and updates the task state */
+  function delTask(Tid){
+    const filteredArray = tasks.filter(item => item.id !== Tid);
+    setTasks(filteredArray);
   }
 
 
@@ -48,7 +54,7 @@ function App() {
 
       <UserInfo handleClick={handleAlert} />
       
-      <TaskComponent tasks={tasks} />
+      <TaskComponent tasks={tasks} delTask={delTask} />
 
 
       <TaskForm addTask={addTask} />
